@@ -270,7 +270,7 @@ Read the configuration file (based) on the YAML file
 
 ## 10. **Progress**
 
-- Implement Common Basic Modules
+1. Implement Common Basic Modules
 
 - 1.1: (TODO) Implement socket.h/cpp, including the bind/listen/accept/connect/read/write/read_line/write_line methods of the Socket class.
 
