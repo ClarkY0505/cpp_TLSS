@@ -1,6 +1,6 @@
 # C++ Toy-level Storage Service Design Document
 
-**English** | [简体中文](README.md)
+ [简体中文](README.md) | **English**
 
 ## 1. Introduction
 
