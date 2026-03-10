@@ -1,6 +1,6 @@
 # C++ 玩具级存储服务设计文档
 
-**简体中文** | [English](README.es.md)
+**简体中文** |  [English](README.es.md)
 
 ## 1. 项目概述
 
