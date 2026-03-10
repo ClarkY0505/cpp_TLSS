@@ -181,7 +181,6 @@ const std::vector<AlertRule> DEFAULT_RULES = {
 ### 7.1 网络基础设施
 
 ```cpp
-// common/io_context.h
 class IOContext {
 public:
     void run();
@@ -189,7 +188,6 @@ public:
     void post(std::function<void()> task);
 };
 
-// common/socket.h
 class Socket {
 public:
     Socket();
@@ -219,7 +217,6 @@ private:
 ### 7.2 线程池
 
 ```cpp
-// common/thread_pool.h
 class ThreadPool {
 public:
     explicit ThreadPool(size_t num_threads);
