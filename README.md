@@ -270,7 +270,7 @@ private:
 
 ## 10. 进度
 
- 1：实现公共基础模块（common）
+- [ ] 1：实现公共基础模块（common）
 
 - 1.1: TODO 实现socket.h/cpp，包含Socket类的bind/listen/accept/connect/read/write/read_line/write_line方法
 - 1.2: TODO 实现thread_pool.h/cpp，包含线程池的submit任务提交和工作线程管理
