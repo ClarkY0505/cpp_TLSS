@@ -34,8 +34,12 @@ if(OPENSSL_FOUND)
     message(STATUS "OpenSSL include: ${OPENSSL_INCLUDE_DIR}")
 endif()
 
-# Protobuf
-find_package(Protobuf REQUIRED)
+# Protobuf — use CONFIG mode to avoid FindProtobuf version mismatch warning
+# (protoc reports release version e.g. 31.1, libprotobuf reports ABI version e.g. 6.31.1)
+find_package(Protobuf CONFIG QUIET)
+if(NOT Protobuf_FOUND)
+    find_package(Protobuf REQUIRED)
+endif()
 if(Protobuf_FOUND)
     message(STATUS "Protobuf found: ${Protobuf_VERSION}")
 endif()
@@ -148,7 +152,7 @@ target_include_directories(proto_lib PUBLIC
 )
 
 target_link_libraries(proto_lib PUBLIC
-    ${Protobuf_LIBRARIES}
+    protobuf::libprotobuf
     ${GRPC_LIBRARIES}
 )
 
@@ -157,7 +161,7 @@ target_link_libraries(proto_lib PUBLIC
 # =============================================================================
 
 include_directories(
-    ${CMAKE_SOURCE_DIR}/include
+    ${CMAKE_SOURCE_DIR}/inc
     ${GENERATED_DIR}
     ${OPENSSL_INCLUDE_DIR}
 )
@@ -186,8 +190,6 @@ target_link_libraries(storage-service
     rpc_lib
     proto_lib
     ${OPENSSL_LIBRARIES}
-    ${GRPC_LIBRARIES}
-    ${Protobuf_LIBRARIES}
     yaml-cpp
     Threads::Threads
 )
