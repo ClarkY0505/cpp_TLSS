@@ -173,6 +173,7 @@ include_directories(
 add_subdirectory(src/common)
 add_subdirectory(src/ftp)
 add_subdirectory(src/gateway)
+add_subdirectory(src/logger)
 add_subdirectory(src/monitor)
 add_subdirectory(src/rpc)
 
@@ -186,6 +187,7 @@ target_link_libraries(storage-service
     common_lib
     ftp_lib
     gateway_lib
+    logger_lib
     monitor_lib
     rpc_lib
     proto_lib
